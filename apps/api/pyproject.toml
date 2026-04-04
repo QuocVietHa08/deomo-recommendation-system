@@ -1,17 +1,21 @@
 [tool.poetry]
 name = "api"
-version = "0.1.0"
-description = ""
+version = "1.0.0"
+description = "VinoBuzz AI Sommelier API"
 authors = ["cording12 <joncording12@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
 fastapi = "^0.109.2"
 uvicorn = "^0.27.1"
-email-validator = "^2.1.0"
 pydantic-settings = "^2.2.1"
 python-dotenv = "^1.0.1"
-supabase-py-async = "^2.5.5"
+supabase = "^2.5.0"
+langchain = "^0.2.16"
+langchain-openai = "^0.1.23"
+langchain-core = "^0.2.38"
+openai = "^1.45.0"
+redis = {extras = ["hiredis"], version = "^5.0.8"}
 
 [tool.poetry.dev-dependencies]
 isort = "^5.10.1"
