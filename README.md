@@ -4,14 +4,6 @@
   A conversational AI recommendation system that asks the right questions, extracts your preferences, and recommends items from a real database.
 </p>
 
----
-
-## Demo
-
-<video src="demo.mp4" controls width="100%"></video>
-
----
-
 ## Architecture
 
 ![Architecture](architecture.svg)
