@@ -6,6 +6,12 @@
 
 ---
 
+## Demo
+
+<video src="demo.mp4" controls width="100%"></video>
+
+---
+
 ## Architecture
 
 ![Architecture](architecture.svg)
