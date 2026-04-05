@@ -10,13 +10,13 @@ from src.models.slots import SlotState
 SLOT_SYSTEM = """You are a slot extractor for a wine sommelier app.
 Extract structured data from the user message into JSON.
 Return ONLY valid JSON matching this schema (no markdown, no explanation):
-{
+{{
   "budget_hkd": number | null,
   "occasion": string | null,
   "wine_type": "Red" | "White" | "Sparkling" | "Rosé" | "Any" | null,
   "region": string | null,
   "food_pairing": string | null
-}
+}}
 Never invent values. If not mentioned, return null."""
 
 _llm = ChatOpenAI(model="gpt-4o-mini", api_key=settings.OPENAI_API_KEY, temperature=0)

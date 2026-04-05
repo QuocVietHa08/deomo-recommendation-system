@@ -16,6 +16,7 @@ class Wine(BaseModel):
     occasions: Optional[List[str]] = None
     food_pairings: Optional[List[str]] = None
     in_stock: bool = True
+    thumb_url: Optional[str] = None
 
 
 class Recommendation(BaseModel):

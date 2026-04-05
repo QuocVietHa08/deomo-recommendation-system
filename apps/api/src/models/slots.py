@@ -16,11 +16,11 @@ class SlotState(BaseModel):
         )
 
     def merge(self, other: "SlotState") -> "SlotState":
-        """Accumulate slots: never overwrite an already-filled slot."""
+        """Merge: new message slots take priority; fall back to existing slots for gaps."""
         return SlotState(
-            budget_hkd=self.budget_hkd if self.budget_hkd is not None else other.budget_hkd,
-            occasion=self.occasion if self.occasion is not None else other.occasion,
-            wine_type=self.wine_type if self.wine_type is not None else other.wine_type,
-            region=self.region if self.region is not None else other.region,
-            food_pairing=self.food_pairing if self.food_pairing is not None else other.food_pairing,
+            budget_hkd=other.budget_hkd if other.budget_hkd is not None else self.budget_hkd,
+            occasion=other.occasion if other.occasion is not None else self.occasion,
+            wine_type=other.wine_type if other.wine_type is not None else self.wine_type,
+            region=other.region if other.region is not None else self.region,
+            food_pairing=other.food_pairing if other.food_pairing is not None else self.food_pairing,
         )

@@ -2,6 +2,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from src.routers.chat import router as chat_router
+from src.routers.sessions import router as sessions_router
+from src.routers.wines import router as wines_router
 
 
 def get_application() -> FastAPI:
@@ -20,6 +22,8 @@ def get_application() -> FastAPI:
     )
 
     _app.include_router(chat_router)
+    _app.include_router(wines_router)
+    _app.include_router(sessions_router)
 
     @_app.get("/", include_in_schema=False)
     async def health():
